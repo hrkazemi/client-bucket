@@ -6,3 +6,7 @@ store file in browser cache
 ## create new bucket
 
 ## remove bucket
+
+## events
+
+### on bucket changed
