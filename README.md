@@ -1,7 +1,7 @@
-# file-bucket
+# client-bucket
 store file in browser cache
 
-```npm i file-bucket```
+```npm i client-bucket```
 
 ## create new bucket
 
