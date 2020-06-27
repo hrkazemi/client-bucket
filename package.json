@@ -1,0 +1,16 @@
+{
+  "name": "client-bucket",
+  "version": "1.0.0",
+  "description": "store file in browser cache",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hrkazemi/client-bucket.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "hamidreza kazemi",
+  "license": "ISC"
+}
