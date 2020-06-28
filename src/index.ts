@@ -1,1 +1,1 @@
-export { test1, test2 } from './storage';
+export { ClientBucket, Bucket } from './ClientBucket';
