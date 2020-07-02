@@ -1,68 +1,9 @@
+import Bucket from "./Bucket";
 
 export enum ERROR_MSG {
-    BUCKET_ALREADY_EXIST = 'BUCKET_ALREADY_EXIST',
+    // BUCKET_ALREADY_EXIST = 'BUCKET_ALREADY_EXIST',
     NOT_SUPPORT = 'NOT_SUPPORT',
-    BUCKET_NOT_EXIST = 'BUCKET_NOT_EXIST',
-}
-
-export class Bucket {
-
-    private repository: CacheStorage = caches;
-
-    constructor(private realName: string) { }
-
-    // async check(): Promise<boolean> {
-    //     return await this.repository.has(name);
-    // }
-
-    /** bucket name */
-    get name() {
-        return this.realName.replace(ClientBucket.bucketNamePrefix, '');
-    }
-
-    private async open(): Promise<Cache> {
-        return await this.repository.open(this.realName);
-    }
-    /** 
-     * @returns bucket items unique ids
-     */
-    async items(): Promise<Array<string>> {
-        const col = await this.open();
-        const keys = await col.keys();
-        const list: string[] = keys.map(key => key.url.replace(window.location.origin + '/', ''));
-        return list;
-    }
-    /** clear bucket */
-    async clear(): Promise<boolean> {
-        return await this.repository.delete(this.realName);
-    }
-    /**
-     * will return item response if exist.
-     * @param itemId item's id
-     */
-    async pickItem(itemId: string): Promise<Response | undefined> {
-        const col = await this.open();
-        const response = await col.match(itemId);
-        // return file ? new Uint8Array(await file.arrayBuffer()) : undefined;
-        return response;
-    }
-    /**
-     * will remove item with the given id.
-     */
-    async removeItem(itemId: string): Promise<boolean> {
-        const col = await this.open();
-        return await col.delete(itemId);
-    }
-    /**
-     * will create or replace given data with this itemId.
-     * @param itemId item unique id
-     * @param data item data to store
-     */
-    async putItem(itemId: string, data: BodyInit): Promise<boolean> { // Uint8Array
-        const col = await this.open();
-        await col.put(itemId, new Response(data));
-        return true;
-    }
+    // BUCKET_NOT_EXIST = 'BUCKET_NOT_EXIST',
 }
 
 export default class ClientBucket {
@@ -111,7 +52,8 @@ export default class ClientBucket {
         if (!ClientBucket.isSuport) throw new Error(ERROR_MSG.NOT_SUPPORT);
         // if (!await ClientBucket.hasBucket(ClientBucket.bucketName(name)))
         //     throw new Error(ERROR_MSG.BUCKET_NOT_EXIST);
-        return new Bucket(ClientBucket.bucketName(name));
+        // return new Bucket(ClientBucket.bucketName(name));
+        return new Bucket(name);
     }
 
     /** remove bucket */
