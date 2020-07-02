@@ -51,12 +51,12 @@ export class Bucket {
     }
 }
 
-export class ClientBucket {
+export default class ClientBucket {
 
     private static repository: CacheStorage = caches;
 
     static bucketNamePrefix = 'ClientBucket_';
-    
+
     private static bucketName(name: string): string {
         return ClientBucket.bucketNamePrefix + name;
     }

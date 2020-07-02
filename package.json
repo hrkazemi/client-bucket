@@ -1,6 +1,6 @@
 {
   "name": "client-bucket",
-  "version": "1.1.1",
+  "version": "1.1.3",
   "description": "store file in browser cache",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -12,5 +12,14 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "hamidreza kazemi",
-  "license": "ISC"
+  "license": "ISC",
+  "keywords": [
+    "browser cache storage",
+    "store file cliently",
+    "store file in browser",
+    "cache",
+    "client-bucket",
+    "client cache",
+    "client storage"
+  ]
 }
