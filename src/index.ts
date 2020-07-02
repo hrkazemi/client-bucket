@@ -1,3 +1,4 @@
 import ClientBucket from './ClientBucket';
-export { Bucket } from './ClientBucket';
+import Bucket from './Bucket';
+export { Bucket };
 export default ClientBucket;
