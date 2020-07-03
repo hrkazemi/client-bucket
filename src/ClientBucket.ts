@@ -80,11 +80,11 @@ export default class ClientBucket {
     }
 
     /** remove all buckets */
-    static async removeAllBucket(name: string): Promise<boolean> {
+    static async removeAllBucket(): Promise<boolean> {
         if (!ClientBucket.isSuport) throw new Error(ERROR_MSG.NOT_SUPPORT);
         const brn = await ClientBucket.bucketsRealNames();
         for (let i = 0; i < brn.length; i++) {
-            await ClientBucket.repository.delete(name);
+            await ClientBucket.repository.delete(brn[i]);
         }
         return true;
     }
